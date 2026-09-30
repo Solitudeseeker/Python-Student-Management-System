@@ -20,6 +20,18 @@ def view_student():
             print(key, ":", value)
         print("----------------")
 
+def search_student():
+    search_roll = input("Enter student roll number: ")
+    for student in students:
+        if student["Roll No."] == search_roll:
+            print("\n----------------")
+            print("Student Found!")
+            for key, value in student.items():
+                print(key, ":", value)
+            print("----------------\n")
+            return
+    print("Student Not Found!")
+
 while True:
     print("\n===== STUDENT MANAGEMENT =====")
     print("1. Add student")
