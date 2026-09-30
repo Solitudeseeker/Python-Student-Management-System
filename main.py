@@ -48,6 +48,20 @@ def update_student():
             return
     print("Student Not Found!")
 
+def delete_student():
+    search_roll = input("Enter roll number to delete: ")
+    for student in students:
+        if student["Roll No."] == search_roll:
+            print("Student Found: ", student["name"])
+            confirm = input("Are you sure?(yes/no): ")
+            if confirm.lower() == "yes":
+                students.remove(student)
+                print("Student deleted Successfully!")
+            else:
+                print("Deletion cancelled!")
+            return
+    print("Student Not Found!")
+
 while True:
     print("\n===== STUDENT MANAGEMENT =====")
     print("1. Add student")
