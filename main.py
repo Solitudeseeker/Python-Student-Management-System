@@ -9,6 +9,17 @@ def add_student(name, roll, branch):
     students.append(new_student)
     print("\nStudent added Successfully")
 
+def view_student():
+    if not students:
+        print("No students found!")
+        return
+
+    for student in students:
+        print("\n----------------")
+        for key, value in student.items():
+            print(key, ":", value)
+        print("----------------")
+
 while True:
     print("\n===== STUDENT MANAGEMENT =====")
     print("1. Add student")
