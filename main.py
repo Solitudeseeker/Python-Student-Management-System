@@ -1,0 +1,7 @@
+print("\n===== STUDENT MANAGEMENT =====")
+print("1. Add student")
+print("2. View Student")
+print("3. Search Student")
+print("4. Update Student Details")
+print("5. Delete Student")
+print("6. Exit")
