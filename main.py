@@ -70,3 +70,35 @@ while True:
     print("4. Update Student Details")
     print("5. Delete Student")
     print("6. Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        print("Add Student Selected")
+        name = input("\nEnter student name: ")
+        roll = input("Enter student roll number: ")
+        branch = input("Enter student branch: ")
+
+        add_student(name, roll, branch)
+        
+    elif choice == "2":
+        print("View Students Selected")
+        view_student()
+
+    elif choice == "3":
+        print("Search Student Selected")
+        search_student()
+
+    elif choice == "4":
+        print("Update Student Details Selected")
+        update_student()
+
+    elif choice == "5":
+        print("Delete Student Selected")
+        delete_student()
+
+    elif choice == "6":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid Choice!")
