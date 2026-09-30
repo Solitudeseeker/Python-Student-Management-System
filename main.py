@@ -1,3 +1,5 @@
+students = []
+
 while True:
     print("\n===== STUDENT MANAGEMENT =====")
     print("1. Add student")
