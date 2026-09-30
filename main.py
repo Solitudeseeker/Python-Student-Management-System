@@ -32,6 +32,22 @@ def search_student():
             return
     print("Student Not Found!")
 
+def update_student():
+    search_roll = input("Enter roll number to update: ")
+
+    for student in students:
+        if student["Roll No."] == search_roll:
+            print("\n----------------")
+            print("Student Found!")
+            new_name = input("Enter new name: ")
+            new_branch = input("Enter new branch: ")
+            student["name"] = new_name
+            student["Branch"] = new_branch
+            print("Student updated successfully!")
+            print("----------------\n")
+            return
+    print("Student Not Found!")
+
 while True:
     print("\n===== STUDENT MANAGEMENT =====")
     print("1. Add student")
