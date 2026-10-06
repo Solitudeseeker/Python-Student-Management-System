@@ -1,4 +1,13 @@
+import json
 students = []
+
+def save_students():
+    with open("students.json", "w") as file:
+        json.dump(students, file, indent=4)
+
+def load_students():
+    with open("students.json", "r") as file:
+        return json.load(file)
 
 def add_student(name, roll, branch):
     new_student = {
@@ -7,6 +16,7 @@ def add_student(name, roll, branch):
         "Branch" : branch
     }
     students.append(new_student)
+    save_students()
     print("\nStudent added Successfully")
 
 def view_student():
@@ -43,6 +53,7 @@ def update_student():
             new_branch = input("Enter new branch: ")
             student["name"] = new_name
             student["Branch"] = new_branch
+            save_students()
             print("Student updated successfully!")
             print("----------------\n")
             return
@@ -56,11 +67,14 @@ def delete_student():
             confirm = input("Are you sure?(yes/no): ")
             if confirm.lower() == "yes":
                 students.remove(student)
+                save_students()
                 print("Student deleted Successfully!")
             else:
                 print("Deletion cancelled!")
             return
     print("Student Not Found!")
+
+students = load_students()
 
 while True:
     print("\n===== STUDENT MANAGEMENT =====")
